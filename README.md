@@ -1,43 +1,66 @@
-# Astro Starter Kit: Minimal
+# 🚀 Astro Starter Pro
 
-```sh
-npm create astro@latest -- --template minimal
+Una plantilla de Astro optimizada para **SEO**, **Performance** y **Experiencia de Desarrollo**.
+
+## 🛠️ Cómo usar esta plantilla
+
+### 1. Configuración del Sitio
+Toda la información global del sitio se gestiona en `src/config/site.ts`. Actualiza este archivo con tus datos:
+
+```typescript
+// src/config/site.ts
+export const siteConfig = {
+    name: "Tu Nombre de Sitio",
+    description: "Tu descripción para SEO",
+    url: "https://tudominio.com",
+    locale: "es_UY",
+    author: "Tu Nombre",
+    twitter: "@tu_usuario",
+    ogImage: "/og-image.jpg", // Imagen por defecto para redes sociales
+};
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. Estructura de Páginas
+Para crear una nueva página, simplemente crea un archivo `.astro` en `src/pages/`. Usa el `BaseLayout` para mantener la consistencia y el SEO:
 
-## 🚀 Project Structure
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+<BaseLayout title="Título de la Página" description="Descripción opcional">
+    <main>
+        <h1>Mi nueva página</h1>
+    </main>
+</BaseLayout>
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 3. SEO Avanzado
+El componente `Seo.astro` se encarga de generar automáticamente:
+- Meta tags de título y descripción.
+- Open Graph (para Facebook/WhatsApp).
+- Twitter Cards.
+- URLs canónicas.
+- Robots meta tags y sitemap.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🧞 Comandos
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando | Acción |
+| :--- | :--- |
+| `npm run dev` | Inicia el servidor de desarrollo en `localhost:4321`. |
+| `npm run build` | Genera el sitio estático en la carpeta `dist/`. |
+| `npm run preview` | Previsualiza la build de producción localmente. |
+| `npm run check` | Ejecuta comprobaciones de Astro y accesibilidad. |
+| `npm run typecheck` | Verifica los tipos de TypeScript sin emitir archivos. |
+| `npm run test` | Ejecuta la suite de tests con Vitest. |
+| `npm run format` | Formatea el código usando Prettier. |
+| `npm run lint` | Busca errores de estilo y mejores prácticas con ESLint. |
 
-## 🧞 Commands
+## 📈 Optimizaciones Incluidas
+- **Prefetching**: Las páginas se cargan automáticamente al entrar en el viewport para una navegación instantánea.
+- **Sitemap**: Generación automática de `sitemap-index.xml`.
+- **Robots.txt**: Configurado para una indexación óptima.
+- **Image Optimization**: Uso de `astro:assets` para servir imágenes en formatos modernos.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Creado con ❤️ para desarrolladores que buscan rapidez y calidad.
