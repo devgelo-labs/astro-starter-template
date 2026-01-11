@@ -4,6 +4,13 @@ interface Props {
     description?: string;
     ogImage?: string;
     canonical?: string;
+    metadata?: {
+        title?: string;
+        description?: string;
+        ogImage?: string;
+        canonical?: string;
+        ignoreTitleTemplate?: boolean;
+    };
 }
 
 import Seo from "../components/seo/Seo.astro";
@@ -11,13 +18,25 @@ import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
 import "../styles/global.css";
 
-const { title, description, ogImage, canonical } = Astro.props;
+const { title, description, ogImage, canonical, metadata } = Astro.props;
+
+const finalTitle = metadata?.title || title;
+const finalDescription = metadata?.description || description;
+const finalOgImage = metadata?.ogImage || ogImage;
+const finalCanonical = metadata?.canonical || canonical;
+const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
     <head>
-        <Seo {title} {description} {ogImage} {canonical} />
+        <Seo
+            title={finalTitle}
+            description={finalDescription}
+            ogImage={finalOgImage}
+            canonical={finalCanonical}
+            ignoreTitleTemplate={finalIgnoreTitleTemplate}
+        />
         <slot name="head" />
     </head>
     <body
