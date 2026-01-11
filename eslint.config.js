@@ -13,8 +13,15 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    ...jsxA11y.flatConfigs.recommended,
-    files: ["**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"],
+    files: ["**/*.astro"],
+    plugins: {
+      "jsx-a11y": jsxA11y,
+    },
+    rules: {
+      "jsx-a11y/alt-text": "error",
+      "jsx-a11y/anchor-is-valid": "error",
+      "jsx-a11y/no-static-element-interactions": "off",
+    },
   },
   {
     languageOptions: {
