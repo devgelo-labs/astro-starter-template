@@ -3,9 +3,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import logo from "../assets/logo.svg";
 import { siteConfig } from "../config/site";
+const metadata = {
+	title: `${siteConfig.name} — El siguiente paso para tu proyecto`,
+	description:
+		"Una plantilla moderna y profesional para tus proyectos web con Astro y Tailwind CSS. Impulsá tu desarrollo con una base sólida.",
+	ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout title="Inicio">
+<BaseLayout {metadata}>
 	<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
 		<div class="text-center">
 			<div
