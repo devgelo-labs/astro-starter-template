@@ -7,18 +7,40 @@ interface Props {
 }
 
 import Seo from "../components/seo/Seo.astro";
+import Navbar from "../components/layout/Navbar.astro";
+import Footer from "../components/layout/Footer.astro";
 import "../styles/global.css";
 
 const { title, description, ogImage, canonical } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
     <head>
         <Seo {title} {description} {ogImage} {canonical} />
         <slot name="head" />
     </head>
-    <body>
-        <slot />
+    <body
+        class="bg-[#030303] text-gray-200 antialiased selection:bg-blue-500/30 selection:text-blue-200"
+    >
+        <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+            <!-- Background Glow -->
+            <div class="pointer-events-none absolute inset-0 z-0">
+                <div
+                    class="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-blue-500/10 blur-[120px]"
+                >
+                </div>
+                <div
+                    class="absolute top-[40%] -right-[10%] h-[40%] w-[40%] rounded-full bg-purple-500/10 blur-[120px]"
+                >
+                </div>
+            </div>
+
+            <Navbar />
+            <main class="relative z-10 flex-grow">
+                <slot />
+            </main>
+            <Footer />
+        </div>
     </body>
 </html>
