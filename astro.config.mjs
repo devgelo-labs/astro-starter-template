@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://astro-starter.devgelo.com/",
   integrations: [sitemap()],
   prefetch: {
     prefetchAll: true,
