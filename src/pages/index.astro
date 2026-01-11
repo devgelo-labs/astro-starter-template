@@ -13,7 +13,7 @@ const metadata = {
 	<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
 		<div class="text-center">
 			<div
-				class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-6"
+				class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6"
 			>
 				<span class="relative flex h-2 w-2">
 					<span
@@ -26,7 +26,7 @@ const metadata = {
 				Nuevo: Astro v5 + Tailwind v4
 			</div>
 			<h1
-				class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6"
+				class="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6"
 			>
 				Construye más rápido con <br class="hidden md:block" />
 				<span
@@ -35,7 +35,7 @@ const metadata = {
 					Astro Starter Pro
 				</span>
 			</h1>
-			<p class="max-w-2xl mx-auto text-xl text-gray-400 mb-10">
+			<p class="max-w-2xl mx-auto text-xl text-muted-foreground mb-10">
 				{siteConfig.description}. Optimizado para velocidad,
 				accesibilidad y el mejor SEO de su clase.
 			</p>
@@ -45,13 +45,13 @@ const metadata = {
 			>
 				<a
 					href="https://github.com/angelop47/astro-starter-template"
-					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition-all transform hover:scale-105"
+					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-foreground text-background font-bold hover:bg-foreground/90 transition-all transform hover:scale-105 shadow-lg shadow-primary/20"
 				>
 					Comenzar ahora
 				</a>
 				<a
 					href="/services"
-					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 transition-all"
+					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-muted text-foreground font-bold border border-border hover:bg-muted/80 transition-all"
 				>
 					Ver servicios
 				</a>
@@ -60,7 +60,7 @@ const metadata = {
 
 		<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div
-				class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-blue-500/20 transition-all"
+				class="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all shadow-sm"
 			>
 				<div
 					class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6"
@@ -76,14 +76,16 @@ const metadata = {
 						></path></svg
 					>
 				</div>
-				<h3 class="text-xl font-bold text-white mb-3">SEO de Elite</h3>
-				<p class="text-gray-400 text-sm">
+				<h3 class="text-xl font-bold text-foreground mb-3">
+					SEO de Elite
+				</h3>
+				<p class="text-muted-foreground text-sm">
 					Meta tags automáticos, Open Graph, Twitter Cards y Sitemap
 					indexado perfectamente.
 				</p>
 			</div>
 			<div
-				class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-purple-500/20 transition-all"
+				class="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all shadow-sm"
 			>
 				<div
 					class="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6"
@@ -98,16 +100,16 @@ const metadata = {
 						><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg
 					>
 				</div>
-				<h3 class="text-xl font-bold text-white mb-3">
+				<h3 class="text-xl font-bold text-foreground mb-3">
 					Performance Extremo
 				</h3>
-				<p class="text-gray-400 text-sm">
+				<p class="text-muted-foreground text-sm">
 					Prefetching de páginas, imágenes optimizadas y 0kb de JS
 					innecesario por defecto.
 				</p>
 			</div>
 			<div
-				class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-pink-500/20 transition-all"
+				class="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all shadow-sm"
 			>
 				<div
 					class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 mb-6"
@@ -123,8 +125,10 @@ const metadata = {
 						></path></svg
 					>
 				</div>
-				<h3 class="text-xl font-bold text-white mb-3">Tailwind v4</h3>
-				<p class="text-gray-400 text-sm">
+				<h3 class="text-xl font-bold text-foreground mb-3">
+					Tailwind v4
+				</h3>
+				<p class="text-muted-foreground text-sm">
 					Estilos modernos y rápidos con la última versión de Tailwind
 					CSS vía Vite plugin.
 				</p>
