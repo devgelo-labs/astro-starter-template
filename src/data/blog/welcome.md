@@ -3,7 +3,7 @@ title: "Welcome to the New Blog"
 pubDate: "2026-01-12"
 description: "This is the first post on our new Astro-powered blog."
 author: "Angelo Pescetto"
-image: "/blog/welcome.png"
+image: "/blog/welcome.webp"
 ---
 
 # Welcome!
