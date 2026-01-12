@@ -1,16 +1,33 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-export async function getStaticPaths() {
-    const blog = import.meta.glob("../../data/blog/*.md", { eager: true });
+import type { MarkdownInstance } from "astro";
 
-    return Object.values(blog).map((post: any) => {
-        const slug = post.file.split("/").pop().split(".").shift();
+interface Frontmatter {
+    title: string;
+    description: string;
+    pubDate: string;
+    author: string;
+    image: string;
+}
+
+export async function getStaticPaths() {
+    const blog = import.meta.glob<MarkdownInstance<Frontmatter>>(
+        "../../data/blog/*.md",
+        { eager: true },
+    );
+
+    return Object.values(blog).map((post) => {
+        const slug = post.file.split("/").pop()?.split(".").shift();
         return {
             params: { slug },
             props: { post },
         };
     });
+}
+
+interface Props {
+    post: MarkdownInstance<Frontmatter>;
 }
 
 const { post } = Astro.props;

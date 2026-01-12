@@ -1,8 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+import type { MarkdownInstance } from "astro";
+
+interface Frontmatter {
+    title: string;
+    description: string;
+    pubDate: string;
+    author: string;
+    image: string;
+}
+
 const blog = Object.values(
-    import.meta.glob("../../data/blog/*.md", { eager: true }),
+    import.meta.glob<MarkdownInstance<Frontmatter>>("../../data/blog/*.md", {
+        eager: true,
+    }),
 );
 
 const metadata = {
@@ -34,7 +46,7 @@ const metadata = {
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    blog.map((post: any) => (
+                    blog.map((post) => (
                         <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                             <div class="relative h-48 w-full overflow-hidden">
                                 {post.frontmatter.image && (
@@ -51,7 +63,7 @@ const metadata = {
                                         {post.frontmatter.author}
                                     </p>
                                     <a
-                                        href={`/blog/${post.file.split("/").pop().split(".").shift()}`}
+                                        href={`/blog/${post.file.split("/").pop()?.split(".").shift() ?? ""}`}
                                         class="mt-2 block"
                                     >
                                         <p class="text-xl font-semibold text-foreground group-hover:underline">
