@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = Object.values(
-    import.meta.glob("../../data/posts/*.md", { eager: true }),
+const blog = Object.values(
+    import.meta.glob("../../data/blog/*.md", { eager: true }),
 );
 
 const metadata = {
@@ -34,7 +34,7 @@ const metadata = {
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    posts.map((post: any) => (
+                    blog.map((post: any) => (
                         <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                             <div class="relative h-48 w-full overflow-hidden">
                                 {post.frontmatter.image && (
