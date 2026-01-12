@@ -3,6 +3,7 @@ title: "Markdown Features"
 pubDate: "2026-01-13"
 description: "Exploring the capabilities of Markdown in our blog."
 author: "Angelo Pescetto"
+image: "/blog/markdown.png"
 ---
 
 # Markdown is Great
