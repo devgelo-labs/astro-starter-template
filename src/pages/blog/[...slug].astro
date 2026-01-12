@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = post;
-const { title, description, pubDate, author } = post.frontmatter;
+const { title, description, pubDate, author, image } = post.frontmatter;
 
 const metadata = {
     title: title,
@@ -38,6 +38,18 @@ const metadata = {
                     {title}
                 </h1>
             </div>
+
+            {
+                image && (
+                    <div class="relative mb-8 h-96 w-full overflow-hidden rounded-xl shadow-lg">
+                        <img
+                            src={image}
+                            alt={title}
+                            class="h-full w-full object-cover"
+                        />
+                    </div>
+                )
+            }
 
             <div
                 class="prose prose-lg dark:prose-invert mx-auto prose-a:text-primary hover:prose-a:underline"
