@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
+import Hero from "../components/widgets/Hero.astro";
 const metadata = {
 	title: `${siteConfig.name} — El siguiente paso para tu proyecto`,
 	description:
@@ -10,54 +11,22 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-	<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-		<div class="text-center">
-			<div
-				class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6"
-			>
-				<span class="relative flex h-2 w-2" aria-hidden="true">
-					<span
-						class="absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75 animate-ping motion-reduce:animate-none"
-					></span>
-					<span
-						class="relative inline-flex h-2 w-2 rounded-full bg-primary"
-					></span>
-				</span>
-				Nuevo: Astro v5 + Tailwind v4
-			</div>
-			<h1
-				class="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6"
-			>
-				Construye más rápido con <br class="hidden md:block" />
-				<span
-					class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-				>
-					Astro Starter Pro
-				</span>
-			</h1>
-			<p class="max-w-2xl mx-auto text-xl text-muted-foreground mb-10">
-				{siteConfig.description}. Optimizado para velocidad,
-				accesibilidad y el mejor SEO de su clase.
-			</p>
-
-			<div
-				class="flex flex-col sm:flex-row items-center justify-center gap-4"
-			>
-				<a
-					href="https://github.com/angelop47/astro-starter-template"
-					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-foreground text-background font-bold hover:bg-foreground/90 transition-all transform hover:scale-105 shadow-lg shadow-primary/20"
-				>
-					Comenzar ahora
-				</a>
-				<a
-					href="/services"
-					class="w-full sm:w-auto px-8 py-4 rounded-xl bg-muted text-foreground font-bold border border-border hover:bg-muted/80 transition-all"
-				>
-					Ver servicios
-				</a>
-			</div>
-		</div>
-
+	<Hero
+		title={`Construye más rápido con <br class="hidden md:block" /> <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Astro Starter Pro</span>`}
+		tagline="Nuevo: Astro v5 + Tailwind v4"
+		description={`${siteConfig.description}. Optimizado para velocidad, accesibilidad y el mejor SEO de su clase.`}
+		actions={[
+			{
+				text: "Comenzar ahora",
+				href: "https://github.com/angelop47/astro-starter-template",
+				variant: "primary",
+			},
+			{
+				text: "Ver servicios",
+				href: "/services",
+			},
+		]}
+	>
 		<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div
 				class="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all shadow-sm"
@@ -134,5 +103,5 @@ const metadata = {
 				</p>
 			</div>
 		</div>
-	</section>
+	</Hero>
 </BaseLayout>

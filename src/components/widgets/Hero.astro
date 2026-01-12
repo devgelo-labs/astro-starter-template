@@ -1,0 +1,66 @@
+---
+import type { HeroProps } from "../../types/types";
+
+const {
+    title = await Astro.slots.render("title"),
+    tagline,
+    description = await Astro.slots.render("description"),
+    actions = [],
+} = Astro.props as HeroProps;
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+    <div class="text-center">
+        {
+            tagline && (
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6">
+                    <span class="relative flex h-2 w-2" aria-hidden="true">
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-primary/60 opacity-75 animate-ping motion-reduce:animate-none" />
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                    </span>
+                    {tagline}
+                </div>
+            )
+        }
+        {
+            title && (
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6"
+                    set:html={title}
+                />
+            )
+        }
+        {
+            description && (
+                <p
+                    class="max-w-2xl mx-auto text-xl text-muted-foreground mb-10"
+                    set:html={description}
+                />
+            )
+        }
+
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+            {
+                Array.isArray(actions) &&
+                    actions.length > 0 &&
+                    actions.map((action) => (
+                        <a
+                            href={action.href}
+                            class:list={[
+                                "w-full sm:w-auto px-8 py-4 rounded-xl font-bold transition-all",
+                                action.variant === "primary"
+                                    ? "bg-foreground text-background hover:bg-foreground/90 transform hover:scale-105 shadow-lg shadow-primary/20"
+                                    : "bg-muted text-foreground border border-border hover:bg-muted/80",
+                            ]}
+                        >
+                            {action.text}
+                        </a>
+                    ))
+            }
+        </div>
+    </div>
+
+    <slot />
+</section>
