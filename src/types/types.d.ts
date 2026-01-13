@@ -19,6 +19,8 @@ export interface Feature {
   iconClass?: string;
 }
 
+export type Value = Feature;
+
 export interface Service {
   title: string;
   description: string;

@@ -1,60 +1,39 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
+import Content from "../components/widgets/Content.astro";
+import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.png";
 
 const metadata = {
     title: "Nosotros",
 };
+
+const visionText = [
+    "Somos apasionados por la tecnología y la creación de experiencias web que no solo se vean bien, sino que funcionen de manera excepcional. Esta plantilla es el resultado de años de optimización y mejores prácticas.",
+    "Nuestro objetivo es empoderar a los desarrolladores para que construyan sitios rápidos, accesibles y amigables para los motores de búsqueda desde el primer minuto.",
+];
+
+const values = [
+    {
+        title: "Simplicidad",
+        description:
+            "Código limpio y fácil de entender, sin abstracciones innecesarias.",
+    },
+    {
+        title: "Excelencia",
+        description:
+            "Cada detalle cuenta, desde la semántica HTML hasta la carga de activos.",
+    },
+];
 ---
 
 <BaseLayout {metadata}>
-    <section class="max-w-4xl mx-auto px-4 py-24 md:py-32">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-8">
-                Nuestra Visión
-            </h1>
-
-            <div
-                class="prose prose-lg dark:prose-invert text-muted-foreground max-w-none"
-            >
-                <p class="mb-6">
-                    Somos apasionados por la tecnología y la creación de
-                    experiencias web que no solo se vean bien, sino que
-                    funcionen de manera excepcional. Esta plantilla es el
-                    resultado de años de optimización y mejores prácticas.
-                </p>
-                <p class="mb-6">
-                    Nuestro objetivo es empoderar a los desarrolladores para que
-                    construyan sitios rápidos, accesibles y amigables para los
-                    motores de búsqueda desde el primer minuto.
-                </p>
-            </div>
-            <Image
-                src={aboutImage}
-                alt="Oficina moderna de desarrollo web"
-                class="rounded-3xl shadow-2xl mx-auto mt-12 border border-border/50 aspect-video object-cover"
-            />
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 text-left">
-            <div class="bg-card p-8 rounded-2xl border border-border shadow-sm">
-                <h3 class="text-xl font-bold text-foreground mb-2">
-                    Simplicidad
-                </h3>
-                <p class="text-sm">
-                    Código limpio y fácil de entender, sin abstracciones
-                    innecesarias.
-                </p>
-            </div>
-            <div class="bg-card p-8 rounded-2xl border border-border shadow-sm">
-                <h3 class="text-xl font-bold text-foreground mb-2">
-                    Excelencia
-                </h3>
-                <p class="text-sm">
-                    Cada detalle cuenta, desde la semántica HTML hasta la carga
-                    de activos.
-                </p>
-            </div>
-        </div>
-    </section>
+    <Content
+        title="Nuestra Visión"
+        description={visionText}
+        image={aboutImage}
+        imageAlt="Oficina moderna de desarrollo web"
+    >
+        <Values items={values} columns={2} />
+    </Content>
 </BaseLayout>
