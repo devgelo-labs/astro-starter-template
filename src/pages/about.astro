@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import aboutImage from "../assets/images/about-office.png";
+
 const metadata = {
     title: "Nosotros",
 };
@@ -27,6 +30,11 @@ const metadata = {
                     motores de búsqueda desde el primer minuto.
                 </p>
             </div>
+            <Image
+                src={aboutImage}
+                alt="Oficina moderna de desarrollo web"
+                class="rounded-3xl shadow-2xl mx-auto mt-12 border border-border/50 aspect-video object-cover"
+            />
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 text-left">
             <div class="bg-card p-8 rounded-2xl border border-border shadow-sm">
