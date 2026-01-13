@@ -1,5 +1,6 @@
 ---
 import type { HeroProps } from "../../types/types";
+import Button from "../ui/Button.astro";
 
 const {
     title = await Astro.slots.render("title"),
@@ -46,21 +47,17 @@ const {
                 Array.isArray(actions) &&
                     actions.length > 0 &&
                     actions.map((action) => (
-                        <a
+                        <Button
                             href={action.href}
-                            class:list={[
-                                "w-full sm:w-auto px-8 py-4 rounded-xl font-bold transition-all",
-                                action.variant === "primary"
-                                    ? "bg-foreground text-background hover:bg-foreground/90 transform hover:scale-105 shadow-lg shadow-primary/20"
-                                    : "bg-muted text-foreground border border-border hover:bg-muted/80",
-                            ]}
+                            variant={action.variant as "primary" | "secondary"}
+                            size="lg"
+                            class="w-full sm:w-auto"
                         >
                             {action.text}
-                        </a>
+                        </Button>
                     ))
             }
         </div>
     </div>
-
     <slot />
 </section>
