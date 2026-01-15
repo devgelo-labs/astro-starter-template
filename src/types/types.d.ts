@@ -26,3 +26,8 @@ export interface Service {
   description: string;
   icon: string;
 }
+
+export interface NavLink {
+  text: string;
+  href: string;
+}

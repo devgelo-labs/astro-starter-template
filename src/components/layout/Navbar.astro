@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../../config/site";
+import { navLinks } from "../../config/navigation";
 import ThemeToggle from "../ui/ThemeToggle.astro";
 ---
 
@@ -21,26 +22,16 @@ import ThemeToggle from "../ui/ThemeToggle.astro";
         <!-- Desktop Menu -->
         <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-8">
-                <a
-                    href="/"
-                    class="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                    >Inicio</a
-                >
-                <a
-                    href="/about"
-                    class="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                    >Nosotros</a
-                >
-                <a
-                    href="/services"
-                    class="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                    >Servicios</a
-                >
-                <a
-                    href="/blog"
-                    class="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                    >Blog</a
-                >
+                {
+                    navLinks.map((link) => (
+                        <a
+                            href={link.href}
+                            class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                        >
+                            {link.text}
+                        </a>
+                    ))
+                }
             </div>
         </div>
 
@@ -103,35 +94,24 @@ import ThemeToggle from "../ui/ThemeToggle.astro";
         </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div class="hidden md:hidden" id="mobile-menu">
         <div
-            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/90 border-b border-border"
+            class="space-y-1 border-b border-border bg-background/90 px-2 pb-3 pt-2 sm:px-3"
         >
-            <a
-                href="/"
-                class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-white/10 transition-colors"
-                >Inicio</a
-            >
-            <a
-                href="/about"
-                class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-white/10 transition-colors"
-                >Nosotros</a
-            >
-            <a
-                href="/services"
-                class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-white/10 transition-colors"
-                >Servicios</a
-            >
-            <a
-                href="/blog"
-                class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-white/10 transition-colors"
-                >Blog</a
-            >
+            {
+                navLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+                    >
+                        {link.text}
+                    </a>
+                ))
+            }
             <a
                 href="https://github.com/angelop47/astro-starter-template"
                 target="_blank"
-                class="block px-3 py-2 rounded-md text-base font-medium text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-colors"
+                class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
                 >GitHub</a
             >
         </div>
