@@ -1,18 +1,36 @@
 ---
 import type { Feature } from "../../types/types";
 import Card from "../ui/Card.astro";
+import Headline from "../ui/Headline.astro";
 
 interface Props {
     features: Feature[];
     class?: string;
+    title?: string;
+    subtitle?: string;
+    tagline?: string;
 }
 
-const { features = [], class: className = "" } = Astro.props;
+const {
+    features = [],
+    class: className = "",
+    title,
+    subtitle,
+    tagline,
+} = Astro.props;
 ---
 
 <section
     class={`mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 md:py-20 ${className}`}
 >
+    <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+            container: "max-w-3xl mx-auto text-center",
+        }}
+    />
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
             features.map((feature) => (
