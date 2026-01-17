@@ -8,28 +8,35 @@ interface Props {
     image?: ImageMetadata;
     imageAlt?: string;
     tagline?: string;
+    class?: string;
 }
 
-const { title, description = [], image, imageAlt = "", tagline } = Astro.props;
+const {
+    title,
+    description = [],
+    image,
+    imageAlt = "",
+    tagline,
+    class: className = "",
+} = Astro.props;
 ---
 
-<section class="max-w-4xl mx-auto px-4 py-24 md:py-32">
+<section class={`max-w-4xl mx-auto px-4 py-24 md:py-32 ${className}`}>
     <div class="text-center">
         {
             tagline && (
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 text-primary text-xl font-semibold">
                     {tagline}
                 </div>
             )
         }
         {
             title && (
-                <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-2">
                     {title}
                 </h1>
             )
         }
-
         {
             description.length > 0 && (
                 <div class="prose prose-lg dark:prose-invert text-muted-foreground max-w-none">
@@ -39,13 +46,12 @@ const { title, description = [], image, imageAlt = "", tagline } = Astro.props;
                 </div>
             )
         }
-
         {
             image && (
                 <Image
                     src={image}
                     alt={imageAlt}
-                    class="rounded-3xl shadow-2xl mx-auto mt-12 border border-border/50 aspect-video object-cover"
+                    class="rounded-3xl shadow-2xl mx-auto mt-6 border border-border/50 aspect-video object-cover"
                 />
             )
         }
