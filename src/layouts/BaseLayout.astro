@@ -17,6 +17,7 @@ import Seo from "../components/seo/Seo.astro";
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
 import "../styles/global.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 const { title, description, ogImage, canonical, metadata } = Astro.props;
 
@@ -64,6 +65,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
     <body
         class="bg-background text-foreground antialiased selection:bg-blue-500/30 dark:selection:text-blue-200"
     >
+        <SpeedInsights />
         <div class="relative flex min-h-screen flex-col overflow-x-hidden">
             <!-- Background Glow -->
             <div class="pointer-events-none fixed inset-0 z-0">
