@@ -1,5 +1,6 @@
 ---
 import type { Service } from "../../types/types";
+import Content from "../widgets/Content.astro";
 import Card from "../ui/Card.astro";
 
 interface Props {
@@ -15,22 +16,14 @@ const {
 } = Astro.props;
 ---
 
-<section class="max-w-7xl mx-auto px-4 py-24 md:py-32 text-center">
-    {
-        title && (
-            <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                {title}
-            </h1>
-        )
-    }
-    {
-        description && (
-            <p class="text-xl text-muted-foreground mb-16 max-w-2xl mx-auto">
-                {description}
-            </p>
-        )
-    }
+<Content
+    tagline="Servicios"
+    title={title}
+    description={description ? [description] : []}
+    class="pb-12 md:pb-16"
+/>
 
+<section class="max-w-7xl mx-auto px-4 pb-24 md:pb-32">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
             services.map((s) => (
