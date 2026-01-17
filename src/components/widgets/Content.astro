@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
+import Headline from "../ui/Headline.astro";
 
 interface Props {
     title?: string;
@@ -23,29 +24,16 @@ const {
 
 <section class={`max-w-4xl mx-auto px-4 py-24 md:py-32 ${className}`}>
     <div class="text-center">
-        {
-            tagline && (
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-primary text-xl font-semibold">
-                    {tagline}
-                </div>
-            )
-        }
-        {
-            title && (
-                <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-2">
-                    {title}
-                </h1>
-            )
-        }
-        {
-            description.length > 0 && (
-                <div class="prose prose-lg dark:prose-invert text-muted-foreground max-w-none">
-                    {description.map((paragraph) => (
-                        <p class="mb-6">{paragraph}</p>
-                    ))}
-                </div>
-            )
-        }
+        <Headline
+            title={title}
+            subtitle={description.join(" ")}
+            tagline={tagline}
+            classes={{
+                container: "mb-8",
+                title: "text-4xl md:text-6xl font-bold mb-2",
+                subtitle: "text-lg text-muted-foreground",
+            }}
+        />
         {
             image && (
                 <Image
