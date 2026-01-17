@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import { getCollection } from "astro:content";
+import Headline from "../../components/ui/Headline.astro";
 
 const blogEntries = await getCollection("blog");
 const blog = blogEntries
@@ -23,17 +24,16 @@ const metadata = {
             </div>
         </div>
         <div class="relative mx-auto max-w-5xl">
-            <div class="mb-12 text-center">
-                <h1
-                    class="font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl"
-                >
-                    Nuestras Publicaciones
-                </h1>
-                <p class="mx-auto max-w-3xl text-xl text-muted-foreground">
-                    Explora las últimas noticias, tutoriales y artículos de
-                    nuestro equipo.
-                </p>
-            </div>
+            <Headline
+                tagline="Blog"
+                title="Nuestras Publicaciones"
+                subtitle="Explora las últimas noticias, tutoriales y artículos de nuestro equipo."
+                classes={{
+                    container: "mb-12 text-center",
+                    title: "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl",
+                    subtitle: "mx-auto max-w-3xl text-xl text-muted-foreground",
+                }}
+            />
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
