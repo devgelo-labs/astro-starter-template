@@ -11,20 +11,40 @@ const metadata = {
 };
 
 const visionText = [
-    "Somos apasionados por la tecnología y la creación de experiencias web que no solo se vean bien, sino que funcionen de manera excepcional. Esta plantilla es el resultado de años de optimización y mejores prácticas.",
-    "Nuestro objetivo es empoderar a los desarrolladores para que construyan sitios rápidos, accesibles y amigables para los motores de búsqueda desde el primer minuto.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 ];
 
 const values = [
     {
-        title: "Simplicidad",
+        title: "Corporate",
         description:
-            "Código limpio y fácil de entender, sin abstracciones innecesarias.",
+            "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
     },
     {
-        title: "Excelencia",
+        title: "Creative",
         description:
-            "Cada detalle cuenta, desde la semántica HTML hasta la carga de activos.",
+            "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
+    },
+    {
+        title: "Startups",
+        description:
+            "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+    },
+    {
+        title: "SaaS",
+        description:
+            "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+    },
+    {
+        title: "Education",
+        description:
+            "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+    },
+    {
+        title: "Real Estate",
+        description:
+            "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
     },
 ];
 ---
@@ -36,7 +56,9 @@ const values = [
         description={visionText}
         image={aboutImage}
         imageAlt="Oficina moderna de desarrollo web"
-    >
-        <Values items={values} columns={2} />
-    </Content>
+        class="pb-12 md:pb-16"
+    />
+    <section class="max-w-7xl mx-auto px-4 pb-24 md:pb-32">
+        <Values items={values} columns={3} />
+    </section>
 </BaseLayout>
