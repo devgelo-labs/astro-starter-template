@@ -1,28 +1,28 @@
 ---
-import type { Feature } from "../../types/types";
+import WidgetWrapper from "./WidgetWrapper.astro";
+import type { FeaturesProps } from "../../types/types";
 import { Icon } from "astro-icon/components";
 import Card from "../ui/Card.astro";
 import Headline from "../ui/Headline.astro";
 
-interface Props {
-    features: Feature[];
-    class?: string;
-    title?: string;
-    subtitle?: string;
-    tagline?: string;
-}
-
 const {
     features = [],
-    class: className = "",
     title,
     subtitle,
     tagline,
-} = Astro.props;
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
+} = Astro.props as FeaturesProps;
 ---
 
-<section
-    class={`mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 md:py-20 content-auto ${className}`}
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`pt-16 md:pt-20 pb-8 md:pb-12 ${classes?.container ?? ""}`}
+    bg={bg}
+    classes={classes}
 >
     <Headline
         title={title}
@@ -53,4 +53,4 @@ const {
             ))
         }
     </div>
-</section>
+</WidgetWrapper>

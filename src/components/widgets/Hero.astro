@@ -1,17 +1,26 @@
 ---
+import WidgetWrapper from "./WidgetWrapper.astro";
 import type { HeroProps } from "../../types/types";
 import Button from "../ui/Button.astro";
+import { Icon } from "astro-icon/components";
 
 const {
     title = await Astro.slots.render("title"),
     tagline,
     description = await Astro.slots.render("description"),
     actions = [],
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
 } = Astro.props as HeroProps;
 ---
 
-<section
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 min-h-screen flex flex-col justify-center"
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`pt-24 md:pt-32 pb-12 md:pb-20 min-h-screen flex flex-col justify-center ${classes?.container ?? ""}`}
+    bg={bg}
 >
     <div class="text-center">
         {
@@ -62,4 +71,4 @@ const {
         </div>
     </div>
     <slot />
-</section>
+</WidgetWrapper>

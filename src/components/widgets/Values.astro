@@ -1,17 +1,20 @@
 ---
-import type { Value } from "../../types/types";
+import WidgetWrapper from "./WidgetWrapper.astro";
+import type { ValuesProps } from "../../types/types";
 import Card from "../ui/Card.astro";
 import Headline from "../ui/Headline.astro";
 
-interface Props {
-    items: Value[];
-    columns?: 1 | 2 | 3 | 4;
-    title?: string;
-    subtitle?: string;
-    tagline?: string;
-}
-
-const { items = [], columns = 2, title, subtitle, tagline } = Astro.props;
+const {
+    items = [],
+    columns = 2,
+    title,
+    subtitle,
+    tagline,
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
+} = Astro.props as ValuesProps;
 
 const gridCols = {
     1: "grid-cols-1",
@@ -21,7 +24,13 @@ const gridCols = {
 };
 ---
 
-<section class="max-w-7xl mx-auto px-4 pb-24 md:pb-32">
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    bg={bg}
+    classes={classes}
+>
     <Headline
         title={title}
         subtitle={subtitle}
@@ -49,4 +58,4 @@ const gridCols = {
             ))
         }
     </div>
-</section>
+</WidgetWrapper>

@@ -1,32 +1,39 @@
 ---
+import WidgetWrapper from "./WidgetWrapper.astro";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import Headline from "../ui/Headline.astro";
-
-interface Props {
-    title?: string;
-    description?: string[];
-    image?: ImageMetadata;
-    imageAlt?: string;
-    tagline?: string;
-    class?: string;
-}
+import type { ContentProps } from "../../types/types";
 
 const {
     title,
+    subtitle,
+    tagline,
+    content,
     description = [],
     image,
     imageAlt = "",
-    tagline,
-    class: className = "",
-} = Astro.props;
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
+} = Astro.props as ContentProps;
 ---
 
-<section class={`max-w-4xl mx-auto px-4 py-24 md:py-32 ${className}`}>
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    bg={bg}
+    classes={classes}
+>
     <div class="text-center">
         <Headline
             title={title}
-            subtitle={description.join(" ")}
+            subtitle={subtitle ||
+                (Array.isArray(description)
+                    ? description.join(" ")
+                    : description)}
             tagline={tagline}
             classes={{
                 container: "mb-8",
@@ -45,4 +52,4 @@ const {
         }
         <slot />
     </div>
-</section>
+</WidgetWrapper>

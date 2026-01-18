@@ -1,26 +1,28 @@
 ---
-import type { Service } from "../../types/types";
+import WidgetWrapper from "./WidgetWrapper.astro";
+import type { ServiceListProps } from "../../types/types";
 import Card from "../ui/Card.astro";
 import Headline from "../ui/Headline.astro";
 
-interface Props {
-    services: Service[];
-    class?: string;
-    title?: string;
-    subtitle?: string;
-    tagline?: string;
-}
-
 const {
     services = [],
-    class: className = "",
     title = "",
     subtitle = "",
     tagline = "",
-} = Astro.props;
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
+} = Astro.props as ServiceListProps;
 ---
 
-<section class={`max-w-7xl mx-auto px-4 pb-24 md:pb-32 ${className}`}>
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    bg={bg}
+    classes={classes}
+>
     <Headline
         title={title}
         subtitle={subtitle}
@@ -55,4 +57,4 @@ const {
             ))
         }
     </div>
-</section>
+</WidgetWrapper>

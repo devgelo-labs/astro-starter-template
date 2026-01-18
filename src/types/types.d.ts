@@ -5,12 +5,6 @@ export interface CallToAction {
   icon?: string;
 }
 
-export interface HeroProps {
-  title?: string;
-  tagline?: string;
-  description?: string;
-  actions?: string | CallToAction[];
-}
 
 export interface Feature {
   title: string;
@@ -38,4 +32,40 @@ export interface Widget {
   bg?: string;
   containerClass?: string;
   classes?: Record<string, string>;
+}
+
+export interface HeadlineProps extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+}
+
+export interface HeroProps extends HeadlineProps {
+  description?: string; // override or additional? Hero has description, Headline has subtitle. Hero has actions.
+  actions?: string | CallToAction[];
+  image?: ImageMetadata | string; // Just in case, though checked Hero.astro and it uses slots mostly or props.
+}
+
+export interface FeaturesProps extends HeadlineProps {
+  features?: Feature[];
+  columns?: number; // Values has columns
+}
+
+export interface ContentProps extends HeadlineProps {
+  content?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  items?: Feature[];
+  isReversed?: boolean;
+  isAfterContent?: boolean;
+  description?: string[]; // Adding back description as string array for compatibility
+}
+
+export interface ServiceListProps extends HeadlineProps {
+  services?: Service[];
+}
+
+export interface ValuesProps extends HeadlineProps {
+  items?: Value[];
+  columns?: 1 | 2 | 3 | 4;
 }
