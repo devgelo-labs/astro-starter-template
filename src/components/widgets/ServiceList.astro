@@ -1,29 +1,17 @@
 ---
 import type { Service } from "../../types/types";
-import Content from "../widgets/Content.astro";
+
 import Card from "../ui/Card.astro";
 
 interface Props {
-    title?: string;
-    description?: string;
     services: Service[];
+    class?: string;
 }
 
-const {
-    title = "Nuestros Servicios",
-    description,
-    services = [],
-} = Astro.props;
+const { services = [], class: className = "" } = Astro.props;
 ---
 
-<Content
-    tagline="Servicios"
-    title={title}
-    description={description ? [description] : []}
-    class="pb-12 md:pb-16"
-/>
-
-<section class="max-w-7xl mx-auto px-4 pb-24 md:pb-32">
+<section class={`max-w-7xl mx-auto px-4 pb-24 md:pb-32 ${className}`}>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {
             services.map((s) => (

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
+import Content from "../components/widgets/Content.astro";
 
 const services = [
     {
@@ -30,9 +31,13 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-    <ServiceList
+    <Content
+        tagline="Servicios"
         title="Nuestros Servicios"
-        description="Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital."
-        services={services}
+        description={[
+            "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
+        ]}
+        class="pb-12 md:pb-16"
     />
+    <ServiceList services={services} />
 </BaseLayout>
