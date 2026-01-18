@@ -1,13 +1,17 @@
 ---
 import type { Value } from "../../types/types";
 import Card from "../ui/Card.astro";
+import Headline from "../ui/Headline.astro";
 
 interface Props {
     items: Value[];
     columns?: 1 | 2 | 3 | 4;
+    title?: string;
+    subtitle?: string;
+    tagline?: string;
 }
 
-const { items = [], columns = 2 } = Astro.props;
+const { items = [], columns = 2, title, subtitle, tagline } = Astro.props;
 
 const gridCols = {
     1: "grid-cols-1",
@@ -18,6 +22,14 @@ const gridCols = {
 ---
 
 <section class="max-w-7xl mx-auto px-4 pb-24 md:pb-32">
+    <Headline
+        title={title}
+        subtitle={subtitle}
+        tagline={tagline}
+        classes={{
+            container: "max-w-3xl mx-auto text-center",
+        }}
+    />
     <div class={`grid ${gridCols[columns]} gap-8 text-left`}>
         {
             items.map((item) => (
