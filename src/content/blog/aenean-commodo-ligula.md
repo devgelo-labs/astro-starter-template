@@ -5,7 +5,7 @@ description: "Exploring the depths of layout variations with standard dummy text
 author: "Lorem"
 category: "Tech"
 tags: ["testing", "coding"]
-image: "/blog/blog_post_1_1768848683359.png"
+image: "/blog/blog_post_1_1768848683359.webp"
 ---
 
 # Aenean Commodo Ligula Eget Dolor

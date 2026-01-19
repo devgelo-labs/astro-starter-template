@@ -5,7 +5,7 @@ description: "A deep dive into the philosophy of placeholder text."
 author: "Lorem"
 category: "Astro"
 tags: ["testing", "tutorial"]
-image: "/blog/blog_post_2_1768848698871.png"
+image: "/blog/blog_post_2_1768848698871.webp"
 ---
 
 # Donec Quam Felis Ultricies Nec

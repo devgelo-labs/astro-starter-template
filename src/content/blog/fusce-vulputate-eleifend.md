@@ -5,7 +5,7 @@ description: "Exploring the retro wave aesthetic in modern web interfaces."
 author: "Lorem"
 category: "Design"
 tags: ["web-design", "news"]
-image: "/blog/blog_post_8_1768850554501.png"
+image: "/blog/blog_post_8_1768850554501.webp"
 ---
 
 # Fusce Vulputate Eleifend

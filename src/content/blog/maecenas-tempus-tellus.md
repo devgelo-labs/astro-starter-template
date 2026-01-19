@@ -5,7 +5,7 @@ description: "Structured chaos: Ordering the random words."
 author: "Lorem"
 category: "Tech"
 tags: ["coding", "news"]
-image: "/blog/blog_post_5_1768848750922.png"
+image: "/blog/blog_post_5_1768848750922.webp"
 ---
 
 # Maecenas Tempus Tellus Eget

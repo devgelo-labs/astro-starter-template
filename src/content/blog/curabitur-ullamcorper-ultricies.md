@@ -5,7 +5,7 @@ description: "Extensive reading on the topic of automated content generation."
 author: "Lorem"
 category: "Tech"
 tags: ["tutorial", "testing"]
-image: "/blog/blog_post_4_1768848735398.png"
+image: "/blog/blog_post_4_1768848735398.webp"
 ---
 
 # Curabitur Ullamcorper Ultricies Nisi

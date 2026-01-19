@@ -5,7 +5,7 @@ description: "Short, punchy, and direct to the point."
 author: "Lorem"
 category: "General"
 tags: ["news", "tutorial"]
-image: "/blog/blog_post_6_1768848765056.png"
+image: "/blog/blog_post_6_1768848765056.webp"
 ---
 
 # Nam Quam Nunc Blandit Vel

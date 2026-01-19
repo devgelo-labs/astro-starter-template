@@ -5,7 +5,7 @@ description: "Building tiny worlds: Component-based architecture explained."
 author: "Lorem"
 category: "Tech"
 tags: ["coding", "astro"]
-image: "/blog/blog_post_11_1768850597259.png"
+image: "/blog/blog_post_11_1768850597259.webp"
 ---
 
 # Integer Tincidunt Cras

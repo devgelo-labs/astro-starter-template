@@ -5,7 +5,7 @@ description: "Why elegant code is as important as elegant design."
 author: "Lorem"
 category: "General"
 tags: ["features", "welcome"]
-image: "/blog/blog_post_10_1768850582328.png"
+image: "/blog/blog_post_10_1768850582328.webp"
 ---
 
 # Cras Risus Ipsum

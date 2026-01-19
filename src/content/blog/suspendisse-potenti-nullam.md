@@ -5,7 +5,7 @@ description: "Minimalist architecture and its influence on digital design patter
 author: "Lorem"
 category: "Design"
 tags: ["web-design"]
-image: "/blog/blog_post_7_1768850538178.png"
+image: "/blog/blog_post_7_1768850538178.webp"
 ---
 
 # Suspendisse Potenti Nullam

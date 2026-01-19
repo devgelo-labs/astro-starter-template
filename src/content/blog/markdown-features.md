@@ -3,9 +3,9 @@ title: "Markdown Features"
 pubDate: "2026-01-19"
 description: "Exploring the capabilities of Markdown in our blog."
 author: "Angelo Pescetto"
-image: "/blog/markdown.webp"
 category: "Tech"
 tags: ["markdown", "features", "astro"]
+image: "/blog/markdown.webp"
 ---
 
 # Markdown is Great

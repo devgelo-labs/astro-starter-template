@@ -5,7 +5,7 @@ description: "The art of macro photography and its relation to detail-oriented c
 author: "Lorem"
 category: "General"
 tags: ["features"]
-image: "/blog/blog_post_9_1768850568154.png"
+image: "/blog/blog_post_9_1768850568154.webp"
 ---
 
 # Vestibulum Purus Quam

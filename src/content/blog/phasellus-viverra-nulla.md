@@ -5,7 +5,7 @@ description: "Analyzing code blocks and italicized text in modern web design."
 author: "Lorem"
 category: "Design"
 tags: ["coding", "astro"]
-image: "/blog/blog_post_3_1768848720552.png"
+image: "/blog/blog_post_3_1768848720552.webp"
 ---
 
 # Phasellus Viverra Nulla Ut Metus

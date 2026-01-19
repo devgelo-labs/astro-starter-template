@@ -5,7 +5,7 @@ description: "Next-gen interfaces and the future of dashboard design."
 author: "Lorem"
 category: "Tech"
 tags: ["tutorial", "news"]
-image: "/blog/blog_post_12_1768850610966.png"
+image: "/blog/blog_post_12_1768850610966.webp"
 ---
 
 # Vivamus Elementum Semper
