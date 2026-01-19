@@ -1,6 +1,7 @@
 ---
 import WidgetWrapper from "./WidgetWrapper.astro";
 import type { HeroProps } from "../../types/types";
+import Headline from "../ui/Headline.astro";
 import Button from "../ui/Button.astro";
 import { Icon } from "astro-icon/components";
 
@@ -35,18 +36,17 @@ const {
             )
         }
         {
-            title && (
-                <h1
-                    class="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6"
-                    set:html={title}
-                />
-            )
-        }
-        {
-            description && (
-                <p
-                    class="max-w-2xl mx-auto text-xl text-muted-foreground mb-10"
-                    set:html={description}
+            (title || description) && (
+                <Headline
+                    title={title}
+                    subtitle={description}
+                    titleAs="h1"
+                    classes={{
+                        container: "mb-0 max-w-none",
+                        title: "text-5xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6",
+                        subtitle:
+                            "max-w-2xl mx-auto text-xl text-muted-foreground mb-10",
+                    }}
                 />
             )
         }
