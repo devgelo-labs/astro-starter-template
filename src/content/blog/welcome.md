@@ -1,9 +1,11 @@
 ---
 title: "Welcome to the New Blog"
-pubDate: "2026-01-12"
+pubDate: "2026-01-19"
 description: "This is the first post on our new Astro-powered blog."
 author: "Angelo Pescetto"
 image: "/blog/welcome.webp"
+category: "General"
+tags: ["welcome", "community", "astro"]
 ---
 
 # Welcome!
