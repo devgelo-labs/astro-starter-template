@@ -1,0 +1,46 @@
+---
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+    page: Page<CollectionEntry<"blog">>;
+    class?: string;
+}
+
+const { page, class: className } = Astro.props;
+const { currentPage, lastPage, url } = page;
+const { prev, next } = url;
+---
+
+{
+    (prev || next) && (
+        <div class:list={["flex justify-between mt-12", className]}>
+            {prev ? (
+                <a
+                    href={prev}
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+                >
+                    <Icon name="tabler:arrow-left" class="w-4 h-4 mr-2" />
+                    Anterior
+                </a>
+            ) : (
+                <span />
+            )}
+            <div class="flex items-center text-sm text-muted-foreground">
+                Página {currentPage} de {lastPage}
+            </div>
+            {next ? (
+                <a
+                    href={next}
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+                >
+                    Siguiente
+                    <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
+                </a>
+            ) : (
+                <span />
+            )}
+        </div>
+    )
+}

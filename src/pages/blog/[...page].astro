@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Headline from "../../components/ui/Headline.astro";
+import Pagination from "../../components/ui/Pagination.astro";
+import PostItem from "../../components/blog/PostItem.astro";
+import type { GetStaticPathsOptions } from "astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const blogEntries = await getCollection("blog");
+    const sortedPosts = blogEntries
+        .filter((post) => post.data && post.data.pubDate)
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    return paginate(sortedPosts, { pageSize: 6 });
+}
+
+const { page } = Astro.props;
+const blog = page.data;
+
+const metadata = {
+    title: "Blog",
+    description: "Latest news and updates from our team.",
+};
+---
+
+<BaseLayout metadata={metadata}>
+    <section class="relative px-4 py-24 sm:px-6 lg:px-8 md:py-32">
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-pink-500/5"
+            >
+            </div>
+        </div>
+        <div class="relative mx-auto max-w-5xl">
+            <Headline
+                tagline="Blog"
+                title="Nuestras Publicaciones"
+                subtitle="Explora las últimas noticias, tutoriales y artículos de nuestro equipo."
+                classes={{
+                    container: "mb-12 text-center",
+                    title: "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl",
+                    subtitle: "mx-auto max-w-3xl text-xl text-muted-foreground",
+                }}
+            />
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {blog.map((post) => <PostItem post={post} />)}
+            </div>
+            <Pagination page={page} />
+        </div>
+    </section>
+</BaseLayout>

@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Headline from "../../../components/ui/Headline.astro";
+import PostItem from "../../../components/blog/PostItem.astro";
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("blog");
+    const posts = allPosts.filter((post) => post.data && post.data.pubDate); // Ensure published
+
+    const categories = new Set();
+    posts.forEach((post) => {
+        if (post.data.category) {
+            categories.add(post.data.category);
+        }
+    });
+
+    return Array.from(categories).map((category) => {
+        return {
+            params: { category: category as string },
+            props: {
+                category,
+                posts: posts.filter((post) => post.data.category === category),
+            },
+        };
+    });
+}
+
+const { category, posts } = Astro.props;
+
+const metadata = {
+    title: `Categoría: ${category}`,
+    description: `Artículos en la categoría ${category}.`,
+};
+---
+
+<BaseLayout metadata={metadata}>
+    <section class="relative px-4 py-24 sm:px-6 lg:px-8 md:py-32">
+        <div class="relative mx-auto max-w-5xl">
+            <Headline
+                tagline="Categoría"
+                title={category}
+                subtitle={`Mostrando ${posts.length} artículo${posts.length === 1 ? "" : "s"}.`}
+                classes={{
+                    container: "mb-12 text-center",
+                    title: "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl capitalized",
+                    subtitle: "mx-auto max-w-3xl text-xl text-muted-foreground",
+                }}
+            />
+
+            <div class="mb-8 text-center">
+                <a href="/blog" class="text-primary hover:underline"
+                    >← Volver al blog</a
+                >
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    posts
+                        .sort(
+                            (a, b) =>
+                                b.data.pubDate.valueOf() -
+                                a.data.pubDate.valueOf(),
+                        )
+                        .map((post) => <PostItem post={post} />)
+                }
+            </div>
+        </div>
+    </section>
+</BaseLayout>
