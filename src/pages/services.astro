@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
 import Content from "../components/widgets/Content.astro";
+import Content2 from "../components/widgets/Content2.astro";
+import webDevImg from "../assets/images/services/web-dev.png";
+import seoImg from "../assets/images/services/seo.png";
+import consultingImg from "../assets/images/services/consulting.png";
 
 const services = [
     {
@@ -40,4 +44,90 @@ const metadata = {
         class="pb-12 md:pb-16"
     />
     <ServiceList services={services} />
+    <Content2
+        isReversed={false}
+        items={[
+            {
+                title: "Diseño Responsivo",
+                description:
+                    "Tu sitio se verá perfecto en cualquier dispositivo, desde móviles hasta pantallas de escritorio.",
+            },
+            {
+                title: "Rendimiento Optimizado",
+                description:
+                    "Carga ultrarrápida para mejorar la experiencia de usuario y el posicionamiento SEO.",
+            },
+        ]}
+        image={webDevImg}
+        imageAlt="Desarrollo Web Moderno"
+    >
+        <Fragment>
+            <h3
+                class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+            >
+                Desarrollo Web Moderno
+            </h3>
+            Nos especializamos en construir sitios web rápidos, seguros y escalables
+            utilizando las últimas tecnologías del mercado. Transformamos tu visión
+            en una experiencia digital impactante.
+        </Fragment>
+    </Content2>
+
+    <Content2
+        isReversed={true}
+        items={[
+            {
+                title: "Auditoría SEO",
+                description:
+                    "Analizamos a fondo tu sitio web para identificar oportunidades de mejora técnica y de contenido.",
+            },
+            {
+                title: "Estrategia de Contenidos",
+                description:
+                    "Creamos planes de contenido relevantes que atraen y retienen a tu audiencia objetivo.",
+            },
+        ]}
+        image={seoImg}
+        imageAlt="Estrategias SEO"
+    >
+        <Fragment>
+            <h3
+                class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+            >
+                Estrategias SEO Avanzadas
+            </h3>
+            Ayudamos a que tu negocio sea encontrado por las personas correctas. Nuestras
+            estrategias de posicionamiento orgánico están diseñadas para aumentar
+            tu visibilidad y atraer tráfico cualificado.
+        </Fragment>
+    </Content2>
+
+    <Content2
+        isReversed={false}
+        items={[
+            {
+                title: "Transformación Digital",
+                description:
+                    "Te guiamos en la adopción de nuevas tecnologías para optimizar tus procesos de negocio.",
+            },
+            {
+                title: "Arquitectura de Software",
+                description:
+                    "Diseñamos sistemas robustos y escalables preparados para el crecimiento futuro.",
+            },
+        ]}
+        image={consultingImg}
+        imageAlt="Consultoría Tecnológica"
+    >
+        <Fragment>
+            <h3
+                class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+            >
+                Consultoría Tecnológica
+            </h3>
+            Te acompañamos en la toma de decisiones críticas. Evaluamos tu infraestructura
+            actual y diseñamos hojas de ruta personalizadas para llevar tu empresa
+            al siguiente nivel tecnológico.
+        </Fragment>
+    </Content2>
 </BaseLayout>
