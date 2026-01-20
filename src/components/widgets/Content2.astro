@@ -1,6 +1,7 @@
 ---
 import WidgetWrapper from "./WidgetWrapper.astro";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import Headline from "../ui/Headline.astro";
 import Button from "../ui/Button.astro";
 import type { ContentProps } from "../../types/types";
@@ -19,6 +20,7 @@ const {
     isDark = false,
     classes = {},
     bg = await Astro.slots.render("bg"),
+    items = [],
 } = Astro.props as ContentProps;
 ---
 
@@ -47,6 +49,50 @@ const {
                     subtitle: "text-lg text-muted-foreground",
                 }}
             />
+            <slot />
+            {
+                items && items.length > 0 && (
+                    <div class="space-y-8 my-8">
+                        {items.map(
+                            ({
+                                title: titleItem,
+                                description: descriptionItem,
+                                icon,
+                            }) => (
+                                <div class="flex">
+                                    <div class="shrink-0">
+                                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary-900 text-primary-100">
+                                            {icon ? (
+                                                <Icon
+                                                    name={icon}
+                                                    class="w-5 h-5"
+                                                />
+                                            ) : (
+                                                <Icon
+                                                    name="tabler:check"
+                                                    class="w-5 h-5"
+                                                />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div class="ml-4">
+                                        {titleItem && (
+                                            <h3 class="text-lg font-medium leading-6 dark:text-white">
+                                                {titleItem}
+                                            </h3>
+                                        )}
+                                        {descriptionItem && (
+                                            <p class="mt-2 text-muted-foreground">
+                                                {descriptionItem}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+                            ),
+                        )}
+                    </div>
+                )
+            }
             {
                 Array.isArray(actions) && actions.length > 0 && (
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
