@@ -1,0 +1,86 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import { Image } from "astro:assets";
+import Headline from "../ui/Headline.astro";
+import Button from "../ui/Button.astro";
+import type { ContentProps } from "../../types/types";
+
+const {
+    title,
+    subtitle,
+    tagline,
+    description = [],
+    image,
+    imageAlt = "",
+    actions = [],
+    isReversed = false,
+    isAfterContent = false,
+    id,
+    isDark = false,
+    classes = {},
+    bg = await Astro.slots.render("bg"),
+} = Astro.props as ContentProps;
+---
+
+<WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`max-w-7xl mx-auto ${isAfterContent ? "pt-0 md:pt-0 pb-12 md:pb-20" : "pt-24 md:pt-32 pb-12 md:pb-20"} ${classes?.container ?? ""}`}
+    bg={bg}
+    classes={classes}
+>
+    <div
+        class={`mx-auto max-w-7xl ${isReversed ? "md:flex-row-reverse" : ""} md:flex md:gap-16`}
+    >
+        <div class="md:basis-1/2 self-center text-left">
+            <Headline
+                title={title}
+                subtitle={subtitle ||
+                    (Array.isArray(description)
+                        ? description.join(" ")
+                        : description)}
+                tagline={tagline}
+                titleAs="h2"
+                classes={{
+                    container: "mb-8",
+                    title: "text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading",
+                    subtitle: "text-lg text-muted-foreground",
+                }}
+            />
+            {
+                Array.isArray(actions) && actions.length > 0 && (
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        {actions.map((action) => (
+                            <Button
+                                href={action.href}
+                                variant={
+                                    action.variant as "primary" | "secondary"
+                                }
+                                class="w-full sm:w-auto"
+                            >
+                                {action.icon && (
+                                    <Fragment set:html={action.icon} />
+                                )}
+                                {action.text}
+                            </Button>
+                        ))}
+                    </div>
+                )
+            }
+            <slot />
+        </div>
+        <div class="md:basis-1/2 self-center mt-10 md:mt-0" aria-hidden="true">
+            {
+                image && (
+                    <div class="relative m-auto max-w-4xl">
+                        <Image
+                            src={image}
+                            alt={imageAlt}
+                            class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                        />
+                    </div>
+                )
+            }
+        </div>
+    </div>
+</WidgetWrapper>

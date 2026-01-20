@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/widgets/Hero.astro";
 import Features from "../components/widgets/Features.astro";
 import Content from "../components/widgets/Content.astro";
+import Content2 from "../components/widgets/Content2.astro";
 import ServiceList from "../components/widgets/ServiceList.astro";
 import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.png";
@@ -42,6 +43,22 @@ const featuresProps = {
 };
 
 const contentProps = {
+    title: "Duis Aute Irure Dolor",
+    description: [
+        "In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+    ],
+    tagline: "Excepteur Sint",
+    image: aboutImage,
+    imageAlt: "Placeholder image",
+    isReversed: false,
+    actions: [
+        { text: "Call to Action", href: "#", variant: "primary" },
+        { text: "Learn more", href: "#", variant: "secondary" },
+    ],
+};
+
+const content2Props = {
     title: "Duis Aute Irure Dolor",
     description: [
         "In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -124,6 +141,7 @@ const valuesProps = {
     <Hero {...heroProps} />
     <Features {...featuresProps} />
     <Content {...contentProps} />
+    <Content2 {...content2Props} />
     <ServiceList {...serviceListProps} />
     <Values {...valuesProps} />
 </BaseLayout>
