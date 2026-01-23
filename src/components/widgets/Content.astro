@@ -16,14 +16,16 @@ const {
     classes = {},
     bg = await Astro.slots.render("bg"),
 } = Astro.props as ContentProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
 ---
 
 <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    containerClass={`max-w-4xl mx-auto px-4 ${containerClassProp}`}
     bg={bg}
-    classes={classes}
+    classes={otherClasses}
 >
     <div class="text-center">
         <Headline

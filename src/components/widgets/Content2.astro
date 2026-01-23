@@ -22,14 +22,16 @@ const {
     bg = await Astro.slots.render("bg"),
     items = [],
 } = Astro.props as ContentProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
 ---
 
 <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`max-w-7xl mx-auto ${isAfterContent ? "pt-0 md:pt-0 pb-12 md:pb-20" : "pt-24 md:pt-32 pb-12 md:pb-20"} ${classes?.container ?? ""}`}
+    containerClass={`max-w-7xl mx-auto ${containerClassProp}`}
     bg={bg}
-    classes={classes}
+    classes={otherClasses}
 >
     <div
         class={`mx-auto max-w-7xl ${isReversed ? "md:flex-row-reverse" : ""} md:flex md:gap-16`}

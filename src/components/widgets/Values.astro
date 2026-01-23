@@ -16,6 +16,8 @@ const {
     bg = await Astro.slots.render("bg"),
 } = Astro.props as ValuesProps;
 
+const { container: containerClassProp = "", ...otherClasses } = classes;
+
 const gridCols = {
     1: "grid-cols-1",
     2: "grid-cols-1 md:grid-cols-2",
@@ -27,9 +29,9 @@ const gridCols = {
 <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    containerClass={` ${containerClassProp}`}
     bg={bg}
-    classes={classes}
+    classes={otherClasses}
 >
     <Headline
         title={title}

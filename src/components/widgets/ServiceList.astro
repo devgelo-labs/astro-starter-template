@@ -14,14 +14,16 @@ const {
     classes = {},
     bg = await Astro.slots.render("bg"),
 } = Astro.props as ServiceListProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
 ---
 
 <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`pb-12 md:pb-20 ${classes?.container ?? ""}`}
+    containerClass={` ${containerClassProp}`}
     bg={bg}
-    classes={classes}
+    classes={otherClasses}
 >
     <Headline
         title={title}

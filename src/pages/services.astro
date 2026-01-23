@@ -41,11 +41,19 @@ const metadata = {
         description={[
             "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
         ]}
-        class="pb-12 md:pb-16"
     />
-    <ServiceList services={services} />
+    <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
+    <Content
+        tagline="Desarrollo Web"
+        title="Desarrollo Web Moderno"
+        description={[
+            "Nos especializamos en construir sitios web rápidos, seguros y escalables utilizando las últimas tecnologías del mercado. Transformamos tu visión en una experiencia digital impactante.",
+        ]}
+        classes={{ container: "pb-0 md:pb-0" }}
+    />
     <Content2
         isReversed={false}
+        isAfterContent={true}
         items={[
             {
                 title: "Diseño Responsivo",
@@ -60,6 +68,7 @@ const metadata = {
         ]}
         image={webDevImg}
         imageAlt="Desarrollo Web Moderno"
+        classes={{ container: "pt-0 md:pt-0" }}
     >
         <Fragment>
             <h3
