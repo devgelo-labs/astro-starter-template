@@ -14,12 +14,14 @@ const {
     classes = {},
     bg = await Astro.slots.render("bg"),
 } = Astro.props as HeroProps;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
 ---
 
 <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`pt-24 md:pt-32 pb-12 md:pb-20 min-h-screen flex flex-col justify-center ${classes?.container ?? ""}`}
+    containerClass={`min-h-[calc(100vh-72px)] flex flex-col justify-center ${containerClassProp}`}
     bg={bg}
 >
     <div class="text-center">
