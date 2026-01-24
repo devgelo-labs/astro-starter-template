@@ -36,6 +36,7 @@
 - ✅ **Clean Architecture**: Código organizado y fácil de escalar.
 - ✅ **Componentes Reutilizables**: Navbar, Footer y Layouts modernos con Tailwind v4.
 
+<img alt="PageSpeed Insights Score 100/100" src="https://github.com/user-attachments/assets/541d4bfc-bcb9-4287-bd91-08564108d706" />
 <br>
 
 ## Inicio Rápido
