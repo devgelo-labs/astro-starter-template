@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 const { title, description, pubDate, author, image } = post.data;
 
 const formattedDate = pubDate.toLocaleDateString("es-ES", {
@@ -21,6 +21,10 @@ const formattedDate = pubDate.toLocaleDateString("es-ES", {
     month: "long",
     day: "numeric",
 });
+
+const readingTime = remarkPluginFrontmatter?.minutesRead
+    ? `${Math.ceil(remarkPluginFrontmatter.minutesRead)} min de lectura`
+    : "";
 
 const metadata = {
     title: title,
@@ -48,6 +52,7 @@ const metadata = {
                     class="text-sm font-semibold tracking-wide text-primary uppercase"
                 >
                     {formattedDate} • {author}
+                    {readingTime && ` • ${readingTime}`}
                 </p>
                 <h1
                     class="font-heading mt-2 text-3xl font-bold leading-tight tracking-tighter text-foreground sm:text-4xl md:text-5xl"
