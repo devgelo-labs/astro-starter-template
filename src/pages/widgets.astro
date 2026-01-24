@@ -79,17 +79,17 @@ const serviceListProps = {
         {
             title: "Voluptatem Accusantium",
             description: "Doloremque laudantium, totam rem aperiam.",
-            icon: "🚀",
+            icon: "lucide:rocket",
         },
         {
             title: "Ipsa Quae Ab",
             description: "Illo inventore veritatis et quasi architecto.",
-            icon: "💡",
+            icon: "lucide:lightbulb",
         },
         {
             title: "Beatae Vitae Dicta",
             description: "Sunt explicabo. Nemo enim ipsam voluptatem.",
-            icon: "🛠️",
+            icon: "lucide:wrench",
         },
     ],
     title: "Servicios que te ayudarán a lograr tus objetivos",
@@ -135,9 +135,15 @@ const valuesProps = {
     title: "Lo que nos define",
     subtitle: "Principios que guían nuestro trabajo día a día",
 };
+
+const metadata = {
+    title: "Widgets - Astro Starter Template",
+    description: "Showcase of available components and widgets.",
+    ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout>
+<BaseLayout {metadata}>
     <Hero {...heroProps} />
     <Features {...featuresProps} />
     <Content {...contentProps} />

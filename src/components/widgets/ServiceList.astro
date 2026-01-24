@@ -3,6 +3,7 @@ import WidgetWrapper from "./WidgetWrapper.astro";
 import type { ServiceListProps } from "../../types/types";
 import Card from "../ui/Card.astro";
 import Headline from "../ui/Headline.astro";
+import { Icon } from "astro-icon/components";
 
 const {
     services = [],
@@ -38,10 +39,12 @@ const { container: containerClassProp = "", ...otherClasses } = classes;
             services.map((s) => (
                 <Card class="group relative overflow-hidden hover:bg-muted/50 hover:shadow-md">
                     <div class="absolute -right-4 -top-4 text-8xl opacity-10 transition-transform group-hover:scale-110 group-hover:rotate-12 select-none">
-                        {s.icon}
+                        <Icon name={s.icon} class="w-32 h-32" />
                     </div>
                     <div class="text-left relative z-10">
-                        <div class="text-4xl mb-6">{s.icon}</div>
+                        <div class="text-4xl mb-6 text-primary">
+                            <Icon name={s.icon} class="w-12 h-12" />
+                        </div>
                         <h3 class="text-2xl font-bold text-foreground mb-4">
                             {s.title}
                         </h3>
