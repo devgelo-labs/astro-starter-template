@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Schema from "../../components/seo/Schema.astro";
 
 import { getCollection, render } from "astro:content";
 
@@ -29,6 +30,17 @@ const metadata = {
 ---
 
 <BaseLayout metadata={metadata}>
+    <Schema
+        type="BlogPosting"
+        data={{
+            title,
+            description,
+            image,
+            pubDate,
+            author,
+            url: Astro.url.href,
+        }}
+    />
     <section class="relative px-4 py-8 sm:px-6 lg:px-8 md:py-12">
         <div class="relative mx-auto max-w-3xl">
             <div class="mb-10 text-center">

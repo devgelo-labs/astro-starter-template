@@ -1,0 +1,55 @@
+---
+import { siteConfig } from "../../config/site";
+
+interface Props {
+    type: "WebSite" | "BlogPosting" | "BreadcrumbList";
+    data: Record<string, any>;
+}
+
+const { type, data } = Astro.props;
+
+let schema = {};
+
+if (type === "WebSite") {
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        author: {
+            "@type": "Person",
+            name: siteConfig.author,
+        },
+        sameAs: [siteConfig.socialLinks.twitter, siteConfig.socialLinks.github],
+    };
+} else if (type === "BlogPosting") {
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: data.title,
+        description: data.description,
+        image: data.image,
+        datePublished: data.pubDate,
+        author: {
+            "@type": "Person",
+            name: data.author,
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": data.url,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            logo: {
+                "@type": "ImageObject",
+                // Placeholder, ideally should be a real logo URL
+                url: new URL("/favicon.svg", siteConfig.url).toString(),
+            },
+        },
+    };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
