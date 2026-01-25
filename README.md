@@ -61,7 +61,7 @@ Toda la información global del sitio se gestiona en `src/config/site.ts`. Actua
 export const siteConfig = {
   name: "Astro Starter Pro",
   description: "Tu descripción para SEO",
-  url: "https://devgelo.com",
+  url: "https://astrostarterpro.com",
   author: "Angelo Pescetto",
   // ...
 };
