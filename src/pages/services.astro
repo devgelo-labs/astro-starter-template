@@ -9,45 +9,43 @@ import consultingImg from "../assets/images/services/consulting.webp";
 
 const services = [
     {
-        title: "Desarrollo Web",
-        description:
-            "Sitios estáticos y dinámicos construidos para la era moderna.",
+        title: "Web Development",
+        description: "Static and dynamic sites built for the modern era.",
         icon: "lucide:globe",
     },
     {
-        title: "Optimización SEO",
-        description:
-            "Aseguramos que tu contenido sea encontrado por quienes lo buscan.",
+        title: "SEO Optimization",
+        description: "We ensure your content is found by those looking for it.",
         icon: "lucide:search",
     },
     {
-        title: "Consultoría IT",
+        title: "IT Consulting",
         description:
-            "Asesoramiento técnico para escalar tus proyectos al siguiente nivel.",
+            "Technical advice to scale your projects to the next level.",
         icon: "lucide:rocket",
     },
 ];
 const metadata = {
-    title: "Servicios",
+    title: "Services",
     description:
-        "Descubre nuestros servicios de desarrollo web, optimización SEO y consultoría tecnológica.",
+        "Discover our web development, SEO optimization, and technology consulting services.",
 };
 ---
 
 <BaseLayout {metadata}>
     <Content
-        tagline="Servicios"
-        title="Nuestros Servicios"
+        tagline="Services"
+        title="Our Services"
         description={[
-            "Soluciones integrales diseñadas para maximizar el potencial de tu presencia digital.",
+            "Comprehensive solutions designed to maximize the potential of your digital presence.",
         ]}
     />
     <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
     <Content
-        tagline="Desarrollo Web"
-        title="Desarrollo Web Moderno"
+        tagline="Web Development"
+        title="Modern Web Development"
         description={[
-            "Nos especializamos en construir sitios web rápidos, seguros y escalables utilizando las últimas tecnologías del mercado. Transformamos tu visión en una experiencia digital impactante.",
+            "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
         ]}
         classes={{ container: "pb-0 md:pb-0" }}
     />
@@ -56,29 +54,29 @@ const metadata = {
         isAfterContent={true}
         items={[
             {
-                title: "Diseño Responsivo",
+                title: "Responsive Design",
                 description:
-                    "Tu sitio se verá perfecto en cualquier dispositivo, desde móviles hasta pantallas de escritorio.",
+                    "Your site will look perfect on any device, from mobiles to desktop screens.",
             },
             {
-                title: "Rendimiento Optimizado",
+                title: "Optimized Performance",
                 description:
-                    "Carga ultrarrápida para mejorar la experiencia de usuario y el posicionamiento SEO.",
+                    "Fast loading to improve user experience and SEO positioning.",
             },
         ]}
         image={webDevImg}
-        imageAlt="Desarrollo Web Moderno"
+        imageAlt="Modern Web Development"
         classes={{ container: "pt-0 md:pt-0" }}
     >
         <Fragment>
             <h3
                 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
             >
-                Desarrollo Web Moderno
+                Modern Web Development
             </h3>
-            Nos especializamos en construir sitios web rápidos, seguros y escalables
-            utilizando las últimas tecnologías del mercado. Transformamos tu visión
-            en una experiencia digital impactante.
+            We specialize in building fast, secure, and scalable websites using the
+            latest technologies. We transform your vision into an impactful digital
+            experience.
         </Fragment>
     </Content2>
 
@@ -86,28 +84,27 @@ const metadata = {
         isReversed={true}
         items={[
             {
-                title: "Auditoría SEO",
+                title: "SEO Audit",
                 description:
-                    "Analizamos a fondo tu sitio web para identificar oportunidades de mejora técnica y de contenido.",
+                    "We deeply analyze your website to identify technical and content improvement opportunities.",
             },
             {
-                title: "Estrategia de Contenidos",
+                title: "Content Strategy",
                 description:
-                    "Creamos planes de contenido relevantes que atraen y retienen a tu audiencia objetivo.",
+                    "We create relevant content plans that attract and retain your target audience.",
             },
         ]}
         image={seoImg}
-        imageAlt="Estrategias SEO"
+        imageAlt="SEO Strategies"
     >
         <Fragment>
             <h3
                 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
             >
-                Estrategias SEO Avanzadas
+                SEO Optimization
             </h3>
-            Ayudamos a que tu negocio sea encontrado por las personas correctas. Nuestras
-            estrategias de posicionamiento orgánico están diseñadas para aumentar
-            tu visibilidad y atraer tráfico cualificado.
+            We help your business get found by the right people. Our organic positioning
+            strategies are designed to improve your organic visibility.
         </Fragment>
     </Content2>
 
@@ -115,28 +112,28 @@ const metadata = {
         isReversed={false}
         items={[
             {
-                title: "Transformación Digital",
+                title: "Digital Transformation",
                 description:
-                    "Te guiamos en la adopción de nuevas tecnologías para optimizar tus procesos de negocio.",
+                    "We guide you in adopting new technologies to optimize your business processes.",
             },
             {
-                title: "Arquitectura de Software",
+                title: "Software Architecture",
                 description:
-                    "Diseñamos sistemas robustos y escalables preparados para el crecimiento futuro.",
+                    "We design robust and scalable systems prepared for future growth.",
             },
         ]}
         image={consultingImg}
-        imageAlt="Consultoría Tecnológica"
+        imageAlt="Technology Consulting"
     >
         <Fragment>
             <h3
                 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
             >
-                Consultoría Tecnológica
+                Technology Consulting
             </h3>
-            Te acompañamos en la toma de decisiones críticas. Evaluamos tu infraestructura
-            actual y diseñamos hojas de ruta personalizadas para llevar tu empresa
-            al siguiente nivel tecnológico.
+            We accompany you in critical decision-making. We evaluate your current
+            infrastructure and design personalized roadmaps to take your company to
+            the next technological level.
         </Fragment>
     </Content2>
 </BaseLayout>

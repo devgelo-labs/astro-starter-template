@@ -1,6 +1,6 @@
 # 🚀 Astro Starter Pro
 
-**Astro Starter Pro** es una plantilla profesional y de código abierto para construir sitios web ultra rápidos utilizando **[Astro 5](https://astro.build/) + [Tailwind CSS 4](https://tailwindcss.com/)**. Diseñada con las mejores prácticas de la industria, SEO de clase mundial y una experiencia de desarrollo premium.
+**Astro Starter Pro** is a professional, open-source template for building fast websites using **[Astro 5](https://astro.build/) + [Tailwind CSS 4](https://tailwindcss.com/)**. Designed with industry best practices, optimized SEO, and a modern development experience.
 
 <br>
 
@@ -12,14 +12,14 @@
 <br>
 
 <details open>
-<summary>Tabla de Contenidos</summary>
+<summary>Table of Contents</summary>
 
 - [Demo](#demo)
-- [Características](#características)
-- [Inicio Rápido](#inicio-rápido)
-- [Configuración](#configuración)
-- [Comandos](#comandos)
-- [Licencia](#licencia)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [Commands](#commands)
+- [License](#license)
 
 </details>
 
@@ -29,19 +29,19 @@
 
 📌 [https://astrostarterpro.com/](https://astrostarterpro.com/)
 
-## Características
+## Features
 
-- ✅ **Dark & Light Mode**: Implementación limpia.
-- ✅ **SEO Optimizado**: Meta tags automáticos, Structured Data (JSON-LD), RSS Feed, Open Graph, Twitter Cards y Sitemap nativo.
-- ✅ **Clean Architecture**: Código organizado y fácil de escalar.
-- ✅ **Componentes Reutilizables**: Navbar, Footer y Layouts modernos con Tailwind v4.
+- ✅ **Dark & Light Mode**: Clean implementation.
+- ✅ **Optimized SEO**: Automatic meta tags, Structured Data (JSON-LD), RSS Feed, Open Graph, Twitter Cards, and native Sitemap.
+- ✅ **Clean Architecture**: Organized and scalable code.
+- ✅ **Reusable Components**: Navbar, Footer, and modern Layouts with Tailwind v4.
 
 <img alt="PageSpeed Insights Score 100/100" src="https://github.com/user-attachments/assets/541d4bfc-bcb9-4287-bd91-08564108d706" />
 <br>
 
-## Inicio Rápido
+## Quick Start
 
-Para comenzar con este proyecto localmente, clona el repositorio e instala las dependencias:
+To start with this project locally, clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/devgelo-labs/astro-starter-pro.git
@@ -52,15 +52,15 @@ npm run dev
 
 <br>
 
-## Configuración
+## Configuration
 
-Toda la información global del sitio se gestiona en `src/config/site.ts`. Actualiza este archivo con tus datos:
+All global site information is managed in `src/config/site.ts`. Update this file with your data:
 
 ```typescript
 // src/config/site.ts
 export const siteConfig = {
   name: "Astro Starter Pro",
-  description: "Tu descripción para SEO",
+  description: "Your SEO description",
   url: "https://astrostarterpro.com",
   author: "Angelo Pescetto",
   // ...
@@ -69,23 +69,25 @@ export const siteConfig = {
 
 <br>
 
-## Comandos
+## Commands
 
-| Comando             | Acción                                                |
+| Command             | Action                                                |
 | :------------------ | :---------------------------------------------------- |
-| `npm run dev`       | Inicia el servidor de desarrollo en `localhost:4321`. |
-| `npm run build`     | Genera el sitio estático en la carpeta `dist/`.       |
-| `npm run preview`   | Previsualiza la build de producción localmente.       |
-| `npm run lint`      | Ejecuta ESLint para asegurar la calidad del código.   |
-| `npm run format`    | Formatea el código con Prettier.                      |
-| `npm run typecheck` | Verifica los tipos de TypeScript.                     |
+| `npm run dev`       | Starts the development server at `localhost:4321`.    |
+| `npm run build`     | Generates the static site in the `dist/` folder.      |
+| `npm run preview`   | Previews the production build locally.                |
+| `npm run lint`      | Runs ESLint to ensure code quality.                   |
+| `npm run format`    | Formats code with Prettier.                           |
+| `npm run fix`       | Runs format and lint auto-fix.                        |
+| `npm run check`     | Runs astro check for diagnostics.                     |
+| `npm run typecheck` | Verifies TypeScript types.                            |
 
 <br>
 
-## Licencia
+## License
 
-Este proyecto está bajo la licencia **MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+This project is under the **MIT** license. See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
-Diseñado por [Devgelo Labs](https://github.com/devgelo-labs)
+Designed by [Devgelo Labs](https://github.com/devgelo-labs)

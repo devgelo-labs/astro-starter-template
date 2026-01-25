@@ -14,7 +14,7 @@ const { action = "#", method = "POST" } = Astro.props;
         <label
             for="name"
             class="block text-sm font-medium text-foreground/80 mb-2"
-            >Nombre</label
+            >Name</label
         >
         <input
             type="text"
@@ -23,7 +23,7 @@ const { action = "#", method = "POST" } = Astro.props;
             autocomplete="name"
             required
             class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4"
-            placeholder="Tu nombre"
+            placeholder="Your name"
         />
     </div>
     <div>
@@ -39,14 +39,14 @@ const { action = "#", method = "POST" } = Astro.props;
             autocomplete="email"
             required
             class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4"
-            placeholder="tu@email.com"
+            placeholder="your@email.com"
         />
     </div>
     <div>
         <label
             for="message"
             class="block text-sm font-medium text-foreground/80 mb-2"
-            >Mensaje</label
+            >Message</label
         >
         <textarea
             name="message"
@@ -54,11 +54,11 @@ const { action = "#", method = "POST" } = Astro.props;
             rows="4"
             required
             class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4 resize-none"
-            placeholder="¿En qué podemos ayudarte?"></textarea>
+            placeholder="How can we help you?"></textarea>
     </div>
     <div>
         <Button type="submit" size="lg" class="w-full sm:w-auto">
-            Enviar mensaje
+            Send message
         </Button>
     </div>
 </form>

@@ -5,65 +5,62 @@ import Content from "../components/widgets/Content.astro";
 import Form from "../components/ui/Form.astro";
 
 const metadata = {
-    title: "Contacto",
-    description:
-        "Ponte en contacto con nosotros para discutir tu próximo proyecto.",
+    title: "Contact",
+    description: "Get in touch with us to discuss your next project.",
 };
 
-const visionText = [
-    "Ponte en contacto con nosotros para discutir tu próximo proyecto.",
-];
+const visionText = ["Get in touch with us to discuss your next project."];
 ---
 
 <BaseLayout {metadata}>
-    <Content tagline="Contacto" title="Contacto" description={visionText} />
+    <Content tagline="Contact" title="Contact" description={visionText} />
     <div
         class="mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
     >
         <Form />
     </div>
     <Features
-        tagline="Canal de comunicación"
-        title="Estamos aquí para ayudarte"
-        subtitle="Elige el canal de comunicación que prefieras. Respondemos en menos de 24 horas."
+        tagline="Contact Means"
+        title="We are here to help you"
+        subtitle="Choose the communication channel you prefer. We respond in less than 24 hours."
         classes={{ container: "pt-0 md:pt-0" }}
         features={[
             {
-                title: "Teléfono",
+                title: "Phone",
                 description: "+123 456 7890",
                 icon: "lucide:phone",
                 iconClass: "bg-green-500/10 text-green-400",
             },
             {
                 title: "Email",
-                description: "contacto@empresa.com",
+                description: "contact@company.com",
                 icon: "lucide:mail",
                 iconClass: "bg-yellow-500/10 text-yellow-400",
             },
             {
-                title: "Ubicación",
-                description: "Ciudad, País",
+                title: "Location",
+                description: "City, Country",
                 icon: "lucide:map-pin",
                 iconClass: "bg-red-500/10 text-red-400",
             },
             {
-                title: "Atención Personalizada",
+                title: "Personalized Attention",
                 description:
-                    "Nos tomamos el tiempo para entender tus necesidades y ofrecerte soluciones a medida.",
+                    "We understand your needs to offer tailored solutions.",
                 icon: "lucide:user-check",
                 iconClass: "bg-blue-500/10 text-blue-400",
             },
             {
-                title: "Soporte Técnico",
+                title: "Technical Support",
                 description:
-                    "Equipo disponible para resolver cualquier duda o incidencia técnica con rapidez.",
+                    "We resolve any doubt or technical incident quickly.",
                 icon: "lucide:wrench",
                 iconClass: "bg-purple-500/10 text-purple-400",
             },
             {
-                title: "Consultoría Estratégica",
+                title: "Strategic Consulting",
                 description:
-                    "Te asesoramos en cada paso para asegurar el éxito y escalabilidad de tu proyecto.",
+                    "We advise you to ensure the success of your project.",
                 icon: "lucide:briefcase",
                 iconClass: "bg-pink-500/10 text-pink-400",
             },

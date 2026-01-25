@@ -6,39 +6,39 @@ import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.webp";
 
 const metadata = {
-    title: "Nosotros",
+    title: "About us",
     description:
-        "Conoce más sobre nuestra visión, valores y el equipo detrás de Astro Starter Pro.",
+        "Learn more about our vision, values, and the team behind Astro Starter Pro.",
 };
 
 const values = [
     {
-        title: "Corporate",
+        title: "Innovation",
         description:
             "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
     },
     {
-        title: "Creative",
+        title: "Commitment",
         description:
             "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
     },
     {
-        title: "Startups",
+        title: "Quality",
         description:
             "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
     },
     {
-        title: "SaaS",
+        title: "Transparency",
         description:
             "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
     },
     {
-        title: "Education",
+        title: "Teamwork",
         description:
             "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
     },
     {
-        title: "Real Estate",
+        title: "Excellence",
         description:
             "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
     },
@@ -53,23 +53,23 @@ const optimizedImage = await getImage({
 <BaseLayout {metadata}>
     <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
     <Content2
-        title="Nuestra Visión"
+        title="Our Vision"
         description={[
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         ]}
-        tagline="Acerca de"
+        tagline="About"
         image={aboutImage}
-        imageAlt="Oficina moderna de desarrollo web"
+        imageAlt="Modern web development office"
         actions={[
             {
-                text: "Call to Action",
-                href: "#",
+                text: "Contact Us",
+                href: "/contact",
                 variant: "primary",
-                icon: "lucide:github",
+                icon: "lucide:mail",
             },
             {
-                text: "Learn more",
+                text: "Learn More",
                 href: "#",
                 variant: "secondary",
                 icon: "lucide:arrow-right",
@@ -79,8 +79,8 @@ const optimizedImage = await getImage({
     <Values
         items={values}
         columns={3}
-        tagline="Nuestros Valores"
-        title="Lo que nos define"
-        subtitle="Principios que guían nuestro trabajo día a día"
+        tagline="Our Values"
+        title="What Defines Us"
+        subtitle="Principles that guide our daily work"
     />
 </BaseLayout>

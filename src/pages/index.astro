@@ -4,27 +4,27 @@ import { siteConfig } from "../config/site";
 import Hero from "../components/widgets/Hero.astro";
 import Features from "../components/widgets/Features.astro";
 const metadata = {
-	title: `${siteConfig.name} — El siguiente paso para tu proyecto`,
+	title: `${siteConfig.name} — The next step for your project`,
 	description:
-		"Una plantilla moderna y profesional para tus proyectos web con Astro y Tailwind CSS. Impulsá tu desarrollo con una base sólida.",
+		"A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
 	ignoreTitleTemplate: true,
 };
 ---
 
 <BaseLayout {metadata}>
 	<Hero
-		title={`Construye más rápido con <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Astro Starter Pro</span>`}
-		tagline="Nuevo: Astro v5 + Tailwind v4"
-		description={`${siteConfig.description}. Optimizado para velocidad, accesibilidad y el mejor SEO de su clase.`}
+		title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
+		tagline="Astro v5 + Tailwind v4"
+		description={`${siteConfig.description}. A solid foundation to start your projects with best practices.`}
 		actions={[
 			{
-				text: "Comenzar ahora",
+				text: "Get Started",
 				href: "https://github.com/angelop47/astro-starter-pro",
 				variant: "primary",
 				icon: "lucide:github",
 			},
 			{
-				text: "Ver servicios",
+				text: "Learn More",
 				href: "/services",
 				variant: "secondary",
 				icon: "lucide:arrow-right",
@@ -32,28 +32,27 @@ const metadata = {
 		]}
 	/>
 	<Features
-		tagline="Características"
-		title="Todo lo que necesitas para empezar"
-		subtitle="Astro Starter Template viene con las mejores prácticas de SEO, accesibilidad y performance integradas."
+		tagline="Features"
+		title="What's Included"
+		subtitle="A selection of tools and configurations to streamline your workflow."
 		features={[
 			{
-				title: "SEO de Elite",
+				title: "Optimized SEO",
 				description:
-					"Meta tags automáticos, Open Graph, Twitter Cards y Sitemap indexado perfectamente.",
+					"Base configuration for Meta tags, Open Graph, and Sitemap generation.",
 				icon: "lucide:scan-search",
 				iconClass: "bg-blue-500/10 text-blue-400",
 			},
 			{
-				title: "Performance Extremo",
-				description:
-					"Prefetching de páginas, imágenes optimizadas y 0kb de JS innecesario por defecto.",
+				title: "High Performance",
+				description: "Lightweight structure for fast load times.",
 				icon: "lucide:zap",
 				iconClass: "bg-purple-500/10 text-purple-400",
 			},
 			{
 				title: "Tailwind v4",
 				description:
-					"Estilos modernos y rápidos con la última versión de Tailwind CSS vía Vite plugin.",
+					"Integrated configuration with the latest version of Tailwind CSS.",
 				icon: "lucide:palette",
 				iconClass: "bg-pink-500/10 text-pink-400",
 			},
