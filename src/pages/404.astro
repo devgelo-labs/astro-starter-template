@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Button from "../components/ui/Button.astro";
+import Hero from "../components/widgets/Hero.astro";
 
 const metadata = {
     title: "404 - Página no encontrada",
@@ -10,36 +10,22 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-    <section
-        class="flex min-h-[calc(100vh-200px)] flex-col items-center justify-center px-4 py-16 text-center relative overflow-hidden"
-    >
-        <!-- Background decoration -->
-        <div
-            class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,transparent_70%)] opacity-40"
-        >
-        </div>
-
-        <div class="space-y-6 max-w-2xl mx-auto relative z-10 mt-15">
-            <h1
-                class="text-9xl font-extrabold tracking-tighter bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-            >
-                404
-            </h1>
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground">
-                Página no encontrada
-            </h2>
-            <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Lo sentimos, no podemos encontrar la página que buscas. Puede
-                que haya sido movida o eliminada.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                <Button href="/" variant="primary" size="lg">
-                    Volver al Inicio
-                </Button>
-                <Button href="/contact" variant="secondary" size="lg">
-                    Contactar Soporte
-                </Button>
-            </div>
-        </div>
-    </section>
+    <Hero
+        title={`<h1 class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-[12rem] font-extrabold tracking-tighter mb-4">404</h1>`}
+        description="Lo sentimos, no podemos encontrar la página que buscas. Puede que haya sido movida o eliminada."
+        actions={[
+            {
+                variant: "primary",
+                text: "Volver al Inicio",
+                href: "/",
+                icon: "lucide:home",
+            },
+            {
+                variant: "secondary",
+                text: "Contact",
+                href: "/contact",
+                icon: "lucide:phone",
+            },
+        ]}
+    />
 </BaseLayout>
