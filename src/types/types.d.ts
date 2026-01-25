@@ -3,6 +3,7 @@ export interface CallToAction {
   href: string;
   variant?: "primary" | "secondary" | "link";
   icon?: string;
+  ariaLabel?: string;
 }
 
 export interface Feature {

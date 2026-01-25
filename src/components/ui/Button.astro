@@ -5,6 +5,7 @@ interface Props {
     href?: string;
     type?: "button" | "submit" | "reset";
     class?: string;
+    "aria-label"?: string;
     [key: string]: unknown;
 }
 
@@ -14,6 +15,7 @@ const {
     href,
     type = "button",
     class: className = "",
+    "aria-label": ariaLabel,
     ...rest
 } = Astro.props;
 
@@ -42,6 +44,12 @@ const classes = [baseStyles, variants[variant], sizes[size], className].join(
 const Tag = href ? "a" : "button";
 ---
 
-<Tag type={href ? undefined : type} href={href} class={classes} {...rest}>
+<Tag
+    type={href ? undefined : type}
+    href={href}
+    class={classes}
+    aria-label={ariaLabel}
+    {...rest}
+>
     <slot />
 </Tag>
